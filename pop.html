@@ -7,9 +7,9 @@
 <title>Star Rating</title>   
 </head>
 <body>
-  <button  id ="buttons" onclick="Open()">Open</button>
+  <button  id ="buttons" >Open</button>
   
- 
+ <div class="main" >
     <div id="id01" class="container">
   <div class="star-rating">
     
@@ -27,6 +27,7 @@
  
 </div>
 </div>
+</div>
   
   <script>
   const stars=document.querySelectorAll(".star");
@@ -36,6 +37,7 @@
         stars[x].starvalue=x+1;
      ["click","mouseover","mouseout"].forEach(function(e){
          stars[x].addEventListener(e,showrating);
+         
      }) 
     }
     function showrating(e){
@@ -102,17 +104,21 @@
 
     }
     function Close(){
-      document.getElementById("id01").style.display="none";
-      document.querySelector("body").style.backgroundColor='rgb(135, 60, 60,0.5)';
+      document.querySelector('.main').style.display = "none";
+      
     }
-    function Open(){
-      document.getElementById("id01").style.display="block";
-   document.querySelector("body").style.backgroundColor="gray";
-    }
-   
-   
-
     
+    document.getElementById('buttons').addEventListener("click", function() {
+	document.querySelector('.main').style.display = "block";
+  
+});
+
+document.addEventListener('mouseup', function(e) {
+  var container = document.querySelector('#id01');
+  if (!container.contains(e.target)) {
+    document.querySelector(".main").style.display = 'none';
+  }
+});   
     </script> 
 </body>
 </html>
