@@ -25,7 +25,8 @@ position:absolute;
 top:13%;
 left:20%;
 border-radius: 15px;
-padding-top:5px
+padding-top:5px;
+box-shadow:10px 20px 20px 10px grey;
 }
 #inner_heading{
 font-family: Arial, Helvetica, sans-serif;
@@ -34,7 +35,7 @@ text-align:center;
 #para{
 width:90%;
 height:70%;
-background-color:rgb(121, 115, 115);
+background-color:rgb(218, 214, 214);
 position:absolute;
 top:13%;
 left:5%;
@@ -88,7 +89,7 @@ word-wrap: break-word;
 <div id="para">
 <ol id="ollist">
 <li>After this page you will be forwarded to other page in which list of Online authors will be displayed.</li>
-<li>Then You have to select any one of Author of yours chice.</li>
+<li>Then You have to select any one of Author of yours choice.</li>
 <li>Then a chat box will be provided to you for further conversation.</li>
 <li>After,Sucessfull Conversation,you have to provide your required documents.</li>
 <li>Then your form will be filled by respective Author.</li>
@@ -97,20 +98,19 @@ word-wrap: break-word;
 </ol>
 </div>
 <label class="check">
-    <input type="checkbox" onclick="ifCheck()">
+    <input type="checkbox" id="mycheck">
     <span class="checkmark"></span>
     I,have Read all the instructions carefully.
   </label>
   <button class="btn" onclick="Click()">Next</button>
+
 </div>
 <script>
-    var c=0;
-    function ifCheck(){
-        c=1
-    }
+   
 function Click(){
-    if(c==1)
+    if(document.querySelector('#mycheck:checked') !== null){
     alert("Ok");
+    }
     else{
         alert("Fisrt Read all the instructions")
     }
